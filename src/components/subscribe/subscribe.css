@@ -1,0 +1,48 @@
+#pagemain {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	place-items: center;
+}
+
+#maincontainer {
+	background-color: rgb(241, 238, 238);
+	border: transparent;
+	border-radius: 15px;
+	height: 900px;
+	margin: 40px;
+	width: 50%;
+	box-shadow: 0px 0px 108px -46px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0px 0px 108px -46px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 108px -46px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 900px) {
+	#maincontainer {
+		width: 80%;
+	}
+}
+
+#hearthcolumn {
+	height: 100%;
+	display: grid;
+	place-items: center;
+	margin-right: 5px;
+}
+
+#userinputs {
+	margin-top: 40px;
+}
+
+.iSubscribe {
+	background-color: transparent;
+	border-radius: 5px;
+}
+
+#subButton {
+	border: solid;
+	border-color: black;
+	margin-top: 20px;
+	width: 80%;
+	align-self: center;
+}

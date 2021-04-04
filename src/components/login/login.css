@@ -1,0 +1,27 @@
+#pagemain {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	place-items: center;
+}
+
+#maincontainer {
+	background-color: rgb(241, 238, 238);
+	border: transparent;
+	border-radius: 15px;
+	height: 500px;
+	width: 30%;
+	box-shadow: 0px 0px 108px -46px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0px 0px 108px -46px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 108px -46px rgba(0, 0, 0, 0.75);
+}
+
+#signUpLink {
+	color: black;
+}
+
+@media (max-width:900px){
+	#maincontainer {
+		width:80%
+	}
+}

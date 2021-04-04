@@ -1,0 +1,32 @@
+h1{
+    font-size: 50px;
+  }
+  #root {
+    height:100%
+  }
+  
+  #mainrow{
+    height:100%;
+  }
+  #main-container{
+    height: 100%;
+  }
+  
+  #titleColumn,#titleButtons{
+    display: grid;
+    place-items: center;
+  
+  }
+  
+  #mainbtn{
+    border: solid;
+    border-width: 3px;
+    margin:20px;
+    width: 70%;
+    font-size: 30px;
+  }
+  
+  svg{
+    margin-right: 10px;
+    margin-top: 20px;
+  }
