@@ -5,7 +5,7 @@
 	place-items: center;
 }
 
-#maincontainer {
+#maincontaineri {
 	background-color: rgb(241, 238, 238);
 	border: transparent;
 	border-radius: 15px;
@@ -18,7 +18,7 @@
 }
 
 @media (max-width: 900px) {
-	#maincontainer {
+	#maincontaineri {
 		width: 80%;
 	}
 }

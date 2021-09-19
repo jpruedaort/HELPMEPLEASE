@@ -1,15 +1,17 @@
 import "./subscribe.css";
 import React,{useState,useEffect} from 'react'
+import axios from 'axios';
 
 export default function Subscribe() {
 
 	const[userData,setUserData]=useState({name:"",lname:"",age:0,email:"",pass:"",rpass:""})
-	const[valid,setvalid] = useState(true)
+	const[valid,setvalid] = useState(false)
 	useEffect(()=>{
 		if (userData.pass ===userData.rpass){
 			setvalid(true)
 		} else{
 			setvalid(false)
+			console.log("porq aqui paso")
 		}
 		
 
@@ -25,13 +27,19 @@ export default function Subscribe() {
 	}
 
 	function handleSubmit(e){
+		console.log("por aqui pasa")
 		e.preventDefault()
+		axios.post('http://localhost:3000/api/user/register',{userData})
+			.then(res=>{
+				console.log(res)
+			})
+
 		console.log(userData)
 	}
 
 	return (
 		<div id='pagemain'>
-			<div id='maincontainer' className='container pt-4 pb-4'>
+			<div id='maincontaineri' className='container pt-4 pb-4'>
 				<div className='container' style={{ height: "100%" }}>
 					<div className='row h-100'>
 						<div id='hearthcolumn' className='col-1 '>
@@ -75,19 +83,21 @@ export default function Subscribe() {
 						</div>
 						<div className='col-10 h-100'>
 							<div className='container h-100 text-center'>
-								<form >
+								<form autoComplete="off">
+									<div className="col">
 									<h3 id='userinputs'>Name: </h3>
-									<input className='iSubscribe' name="name" onChange={(e)=>handleChange(e)} required></input>
+									<input autoComplete="off" className='iSubscribe' name="name" onChange={(e)=>handleChange(e)} required></input>
 									<h3 id='userinputs'>Last Name: </h3>
-									<input className='iSubscribe' name="lname" onChange={(e)=>handleChange(e)}required></input>
+									<input autoComplete="off"  className='iSubscribe' name="lname" onChange={(e)=>handleChange(e)}required></input>
 									<h3 id='userinputs' >Age: </h3>
-									<input type='number' required className='iSubscribe' name="age" onChange={(e)=>handleChange(e)}></input>
+									</div>
+									<input autoComplete="off" type='number' required className='iSubscribe' name="age" onChange={(e)=>handleChange(e)}></input>
 									<h3 id='userinputs'>Email: </h3>
-									<input type='email' required className='iSubscribe' name="email" onChange={(e)=>handleChange(e)}></input>
+									<input autoComplete="off" type='email' required className='iSubscribe' name="email" onChange={(e)=>handleChange(e)}></input>
 									<h3 id='userinputs' >Password: </h3>
-									<input type="password" name="pass" onChange={(e)=>handleChange(e)} required className='iSubscribe'></input>
+									<input autoComplete="off" type="password" name="pass" onChange={(e)=>handleChange(e)} required className='iSubscribe'></input>
 									<h3 id='userinputs' >Repeat Password: </h3>
-									<input type="password" name="rpass" onChange={(e)=>handleChange(e)} required className='iSubscribe'></input>
+									<input autoComplete="off" type="password" name="rpass" onChange={(e)=>handleChange(e)} required className='iSubscribe'></input>
 									{valid===true ? <p></p> : <p>not valid</p>}
 									<br/>
 									<input id="subButton" disabled={!valid} onClick={(e)=>handleSubmit(e)} className="btn " type="submit"></input>

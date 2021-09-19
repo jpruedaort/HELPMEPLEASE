@@ -1,0 +1,86 @@
+#general {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	place-items: center;
+}
+
+
+#content {
+	height: 97%;
+	width: 75%;
+	border: transparent;
+	border-radius: 10px;
+	background-color: rgb(212, 212, 212);
+	padding: 0;
+	box-shadow: 10px 10px 103px 32px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 10px 10px 103px 32px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 10px 10px 103px 32px rgba(0, 0, 0, 0.3);
+}
+
+#map-container {
+	height: 60%;
+	width: 100%;
+    padding: 0;
+}
+
+#description {
+	width: 100%;
+	height: 40%;
+	background-color: rgb(141, 139, 139);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+#map{
+    border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	pointer-events:none;
+
+}
+
+#maplogo{
+	position: absolute;
+	z-index: 10;
+	margin-left: 30px;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+#description-sub{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+}
+
+#description-text{
+	margin-bottom: 2px;
+	margin-top:3px;
+
+}
+
+#eventDisplay{
+
+	padding: 0;
+	margin:0;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	background-color: grey;
+}
+
+#mapButton{
+	border: transparent;
+	background-color:rgb(199,255,167);
+	margin-top:20px;
+	margin-bottom: 10px;
+	display: grid;
+	place-items: center;
+
+
+}
+
+#txtContent{
+	display: grid;
+}

@@ -1,6 +1,36 @@
 import "./login.css";
+import axios from "axios";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
+	const [userData, getUserData] = useState({ username: "", password: "" });
+	const [userValid, setUserValid] = useState(null);
+	const [visible, setvisible] = useState("visibles");
+
+	function handleChange(e) {
+		const { name, value } = e.target;
+		getUserData((prevState) => ({
+			...prevState,
+			[name]: value,
+		}));
+	}
+
+	function handleSubmit(e) {
+		e.preventDefault();
+		axios
+			.post("http://localhost:3000/api/user/login", { userData })
+			.then((res) => {
+				setUserValid(res.data);
+				if (res.data) {
+					console.log(res.data);
+					setvisible("visibles");
+				} else {
+					setvisible("");
+				}
+			});
+	}
+
 	return (
 		<div id='pagemain'>
 			<div id='maincontainer' className='container pt-2'>
@@ -44,15 +74,34 @@ export default function Login() {
 				</div>
 				<div className='container text-center mt-5'>
 					<h3>Username:</h3>
-					<input></input>
+					<input
+						type='email '
+						name='username'
+						onChange={(e) => handleChange(e)}
+					></input>
 					<h3 className='mt-4'>Password:</h3>
-					<input></input>
+					<input
+						type='password'
+						name='password'
+						onChange={(e) => handleChange(e)}
+					></input>
 					<br />
-					<div className='btn mt-4 mb-5 border border-dark'>Enter</div>
+					<div
+						onClick={(e) => handleSubmit(e)}
+						className='btn mt-4 mb-5 border border-dark'
+					>
+						Enter
+					</div>
 					<br />
-					<a id='signUpLink' href='google.com'>
-						No account? Sign up!
-					</a>
+					<p className={` ${visible}  font-color`}>
+						Incorrect username or password
+					</p>
+
+					<Link to='/Subscribe'>
+						<a id='signUpLink' href='google.com'>
+							No account? Sign up!
+						</a>
+					</Link>
 				</div>
 			</div>
 		</div>

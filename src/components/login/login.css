@@ -5,6 +5,14 @@
 	place-items: center;
 }
 
+.visibles {
+	visibility: hidden;
+	
+}
+.font-color{
+	color:red
+}
+
 #maincontainer {
 	background-color: rgb(241, 238, 238);
 	border: transparent;
@@ -20,8 +28,8 @@
 	color: black;
 }
 
-@media (max-width:900px){
+@media (max-width: 900px) {
 	#maincontainer {
-		width:80%
+		width: 80%;
 	}
 }
